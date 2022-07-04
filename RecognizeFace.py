@@ -6,16 +6,16 @@ import cv2 as cv
 haar_cascade = cv.CascadeClassifier("haarcascade_frontalface_default.xml")
 
 people = []
-for i in os.listdir(r'C:\Users\sreelal\Documents\Project\openCV-py\Resources'):
+for i in os.listdir(r'C:\Users\anagha rs\Desktop\project\openCV-py\Resources'):
     people.append(i)
 
 # features = np.load('features.npy')
 # labels = np.load('labels.npy') 
 
 face_recognizer = cv.face.LBPHFaceRecognizer_create()
-face_recognizer.read('face_trained.yml')
+face_recognizer.read('bin/face_trained.yml')
 
-camera = cv.VideoCapture(0)
+camera = cv.VideoCapture(1)
 while True:
     _, img = camera.read()
     gray = cv.cvtColor(img,cv.COLOR_BGR2GRAY)

@@ -6,11 +6,10 @@ import cv2 as cv
 import numpy as np 
 
 people = []
-for i in os.listdir(r'C:\Users\sreelal\Documents\Project\openCV-py\Resources'):
+for i in os.listdir(r'C:\Users\anagha rs\Desktop\project\openCV-py\Resources'):
     people.append(i)
 
-DIR = r'C:\Users\sreelal\Documents\Project\openCV-py\Resources'
-
+DIR = r'C:\Users\anagha rs\Desktop\project\openCV-py\Resources'
 haar_cascade = cv.CascadeClassifier("haarcascade_frontalface_default.xml")
 
 features = []
@@ -48,5 +47,5 @@ face_recognizer.train(features,labels)
 
 face_recognizer.save(r'bin/face_trained.yml')
 
-np.save(r'bin/features.npy', features)
-np.save(r'bin/labels.npy', labels)
+# np.save(r'bin/features.npy', features)
+# np.save(r'bin/labels.npy', labels)
