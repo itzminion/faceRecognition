@@ -5,7 +5,7 @@ from cv2 import imread
 import numpy as np 
 
 people = []
-DIR = os.getcwd() + r"\Resources"
+DIR = os.getcwd() + "/Resources"
 for i in os.listdir(DIR):
     if os.path.isdir(os.path.join(DIR,i)):
       people.append(i)
@@ -43,7 +43,7 @@ images, labels, names = get_images_and_labels()
 cv.destroyAllWindows()
 
 recognizer.train(images,np.array(labels))
-recognizer.save(r"bin/trained.yml")
+recognizer.save("bin/trained.yml")
 
 with open('bin/names.data', 'wb') as filehandle:
     pickle.dump(names, filehandle)

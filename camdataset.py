@@ -12,7 +12,8 @@ def makePath(path):
         return 0
 while True:   
     individual = input("Name of the person : ")
-    path = os.getcwd() + "\Resources" + "\{}".format(individual)
+    path = os.getcwd() + "/Resources" + "/{}".format(individual)
+    print(path)
     if (not makePath(path)):
         print("Person already exists, or enter full name")
     else:
@@ -30,11 +31,12 @@ while True:
         cv.rectangle(img, (x,y), (x+w,y+h), (0,255,0), 2)
         file_name = "{}_{}.jpg".format(individual,count)
         count += 1
+        print(file_name)
         cv.imwrite(os.path.join(path,file_name),img[y:y+h,x:x+w])
         cv.imshow("frame cam",img)
     if cv.waitKey(100) & 0xFF == ord('q'):
         break 
-    elif count > 100:
+    elif count > 500:
         break 
 camera.release()
 cv.destroyAllWindows()

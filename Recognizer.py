@@ -29,7 +29,7 @@ while True:
             print("Recognized {} with {} confidence".format(name,confidence))
             cv.putText(img, str(name), (x,y), cv.FONT_HERSHEY_COMPLEX, 1.0, (0,255,0), thickness=2)
         else:
-            print("Recognized an Unknown person")
+            print("Recognized an {} person with {}".format(name,confidence))
             cv.putText(img, "Unknown", (x,y), cv.FONT_HERSHEY_COMPLEX, 1.0, (0,255,0), thickness=2)
     cv.imshow("Stream",img)
     if cv.waitKey(1) & 0xFF == ord('q'):
