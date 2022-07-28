@@ -33,7 +33,7 @@ while True:
         count += 1
         print(file_name)
         cv.imwrite(os.path.join(path,file_name),img[y:y+h,x:x+w])
-        cv.imshow("frame cam",img)
+    cv.imshow("frame cam",img)
     if cv.waitKey(100) & 0xFF == ord('q'):
         break 
     elif count > 500:
